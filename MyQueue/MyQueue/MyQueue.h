@@ -24,17 +24,17 @@ public:
 		data = new TYPE[capacity];
 	}
 
-	bool empty()
+	bool empty()const
 	{
 		return numElements == 0;
 	}
 
-	uint size()
+	uint size()const
 	{
 		return numElements;
 	}
 
-	const TYPE* back()
+	const TYPE* back()const
 	{
 		return data[(numElements - 1)];
 	}
@@ -60,8 +60,8 @@ public:
 
 		if (numElements > 0)
 		{
-			buffer = data[0];
-			memcpy(data,data+1,sizeof(TYPE)*(--numElements));
+			buffer = data[counter++];
+			//memcpy(data,data+1,sizeof(TYPE)*(--numElements));
 			ret = true;
 		}
 		return ret;
@@ -73,6 +73,7 @@ public:
 		delete[] data;
 	}
 
+	int counter = 0;
 
 
 };

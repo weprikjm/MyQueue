@@ -11,6 +11,7 @@ int main(int argc, char** argv)
 
 	q.popfront(n);
 	q.popfront(n);
+	q.pushback(3);
 
 	getchar();
 	return 0;
